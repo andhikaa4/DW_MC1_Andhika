@@ -10,8 +10,8 @@ function Home() {
     {user.map((item,index) => {
       return(
         <div key={index} style={{display:"flex", backgroundColor:"black", marginBottom:"5px"}}>
-          <img style={{height:"75px"}} src={item.image} alt=""/>
-          <div className="text-white" style={{color:"white"}}>
+          <img style={{height:"75px", borderRadius:"100px",width:"75px", objectFit:"cover", marginRight:"10px"}} src={item.image} alt=""/>
+          <div style={{color:"white"}}>
             <a onClick={() => navigate(`/profile/${item.id}`)}>{item.username}</a>
             <p>{item.follower}</p>
             <p>{item.following}</p>
