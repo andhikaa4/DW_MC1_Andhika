@@ -1,34 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import user from "./dataDummy/dataDummy";
+import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import Profile from "./Profile";
+import Home from "./Home";
 
 
 
 function App() {
   return (
-    <div className="App">
       <Router>
-        <div>
-          {user.map((item,index) => {
-            return(
-              <div key={index} style={{display:"flex", backgroundColor:"black", marginBottom:"5px"}}>
-                <img className="rounded-5" style={{height:"75px"}} src={item.image} alt=""/>
-                <div className="text-white" style={{color:"white"}}>
-                  <a>{item.username}</a>
-                  <p>{item.follower}</p>
-                  <p>{item.following}</p>
-                </div>
-                
-              </div>
-
-            )
-          })}
-          
-        </div>
         <Routes>
-          <Route exact path='/profile/:id'/>
+          <Route exact path='/' element={<Home/>}/>
+          <Route exact path='/profile/:id' element={<Profile/>}/>
         </Routes>
       </Router>
-    </div>
   );
 }
 
